@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "src": "/img/hero.webp",
+    "width": 943,
+    "height": 768,
+    "alt": "Nave comercial con frente vidriado iluminada de noche, vista aérea",
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAQCdASoQAA0AA4BaJZQAAu1fL4AA/vnHjkkTpoXvDRODtpRf0tZs5g167IZ36E+FuXGa+NTMLbCiaW3p0AAA"
+  },
+  "hero-movil": {
+    "src": "/img/hero-movil.webp",
+    "width": 720,
+    "height": 1280,
+    "alt": "Galería de una nave comercial iluminada de noche",
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwAwCdASoQABwAPu1iqU2ppaOiMAgBMB2JZQABHuqbvAMjF2pUAAD+/odzzIm1v5yopWfDJA6hfE7JZmTlSEBHbmAtr3hhDAcRkk6LRFcS4UjBzJX8VbHz6JKJ2lQXrLW1GCln2uOGMDsAAAA="
+  },
+  "etapa-estructura": {
+    "src": "/img/etapa-estructura.webp",
+    "width": 720,
+    "height": 1280,
+    "alt": "Estructura metálica de una nave comercial en obra",
+    "blurDataURL": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAAAQBACdASoQABwAPu1iqU2ppaOiMAgBMB2JQBOgMYYTbOx3ucJRJbMKAAD+jT4s0mqNQgj+5vr8f/+tnsnSNqDSKomzVEmSTxrZBZRTNtxyAOHMx1XVCrSeajltTjmSSfZ1B/MH+BnnrRpz/LNcztj9l9/4ZVPvyaNVz47tRYv8agh8KkwfYqaIEO3Vk6yEdUnWDeCkDVXP8h/7YcYxStVHrRDKDNjkI0yNitolYeoX14AA"
+  },
+  "etapa-ejecucion": {
+    "src": "/img/etapa-ejecucion.webp",
+    "width": 720,
+    "height": 1280,
+    "alt": "Fachada vidriada de la nave durante la ejecución",
+    "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoQABwAPu1iqU2ppaOiMAgBMB2JYwCo9BexrMzlEcthlSVRC5AA/tc363H1gILaG6Dre2mSbo6Vh3U0j0jY59Y14dvjOYUfpt7HWTt1xXUta8sIpIZzS8BVEehX2yqqVAygVxw6SfsSlyqcHP7HNSOjjcm3QYCo6Z8suGR0NZcAAA=="
+  },
+  "etapa-terminada": {
+    "src": "/img/etapa-terminada.webp",
+    "width": 720,
+    "height": 1280,
+    "alt": "La nave terminada e iluminada de noche",
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwAwCdASoQABwAPu1iqU2ppaOiMAgBMB2JZQABHuqbvAMjF2pUAAD+/odzzIm1v5yopWfDJA6hfE7JZmTlSEBHbmAtr3hhDAcRkk6LRFcS4UjBzJX8VbHz6JKJ2lQXrLW1GCln2uOGMDsAAAA="
+  }
+}
