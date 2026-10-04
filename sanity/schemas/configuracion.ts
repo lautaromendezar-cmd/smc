@@ -93,6 +93,13 @@ export const configuracion = defineType({
       description: 'Una foto vertical para celulares. Si la dejás vacía, se recorta la imagen principal.',
     }),
     defineField({
+      name: 'ctaImagen',
+      title: 'Imagen del cierre ("¿Tenés un proyecto en mente?")',
+      type: 'imagenConAlt',
+      group: 'imagenes',
+      description: 'Foto de fondo del último bloque de la página de inicio. Mejor oscura o de noche: el texto va encima.',
+    }),
+    defineField({
       name: 'secuencia',
       title: 'Secuencia de obra',
       type: 'object',

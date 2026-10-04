@@ -36,6 +36,7 @@ export type ConfigSanity = {
   aniosTrayectoria?: number | null
   heroImagen?: SanityImg | null
   heroImagenMovil?: SanityImg | null
+  ctaImagen?: SanityImg | null
   secuencia?: {
     estructura?: SanityImg | null
     ejecucion?: SanityImg | null

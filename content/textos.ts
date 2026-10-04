@@ -55,7 +55,6 @@ export const hero = {
     'Más de 30 años diseñando y construyendo en Capilla del Señor y la región. Una empresa familiar que acompaña cada etapa.',
   ctaPrincipal: 'Coordiná una reunión',
   ctaSecundario: 'Ver obras',
-  scroll: 'Bajá',
 }
 
 export const nosotros = {

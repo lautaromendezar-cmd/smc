@@ -1,37 +1,44 @@
 {
   "hero": {
     "src": "/img/hero.webp",
-    "width": 943,
-    "height": 768,
-    "alt": "Nave comercial con frente vidriado iluminada de noche, vista aérea",
-    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAQCdASoQAA0AA4BaJZQAAu1fL4AA/vnHjkkTpoXvDRODtpRf0tZs5g167IZ36E+FuXGa+NTMLbCiaW3p0AAA"
+    "width": 2400,
+    "height": 1340,
+    "alt": "[EJEMPLO] Nave comercial con frente vidriado iluminada en la hora azul",
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAQCdASoQAAkAA4BaJaACdAEO7wAfOAD+0OfxpB0txi7OkqsEs/V9edYhPyk243apD/71eiUUi1/4+0UkTkxDXdfs/DSuOk0F+c8j+FtHqybEe6mnCHO3AAA="
   },
   "hero-movil": {
     "src": "/img/hero-movil.webp",
-    "width": 720,
-    "height": 1280,
-    "alt": "Galería de una nave comercial iluminada de noche",
-    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwAwCdASoQABwAPu1iqU2ppaOiMAgBMB2JZQABHuqbvAMjF2pUAAD+/odzzIm1v5yopWfDJA6hfE7JZmTlSEBHbmAtr3hhDAcRkk6LRFcS4UjBzJX8VbHz6JKJ2lQXrLW1GCln2uOGMDsAAAA="
+    "width": 1080,
+    "height": 1935,
+    "alt": "[EJEMPLO] Galería de una nave comercial iluminada de noche",
+    "blurDataURL": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBACdASoQAB0APu1kqU2ppaQiMAgBMB2JbACdMoGv/gNnu6l4Gj+ZkwwNAAD9IOxehJJ6yujQg7IDlN0JZ5tSEOlOmnyPkYSd+8qarepa2r6Y5z+QnLM8V4UJyY6tH/vOhRCQ4isyB9r1ft2YVKtq+Q5z0QG1CUF1UA2scUggXvXWqPaXFsZGpu/k/fsvT7UAAA=="
   },
   "etapa-estructura": {
     "src": "/img/etapa-estructura.webp",
-    "width": 720,
-    "height": 1280,
-    "alt": "Estructura metálica de una nave comercial en obra",
-    "blurDataURL": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAAAQBACdASoQABwAPu1iqU2ppaOiMAgBMB2JQBOgMYYTbOx3ucJRJbMKAAD+jT4s0mqNQgj+5vr8f/+tnsnSNqDSKomzVEmSTxrZBZRTNtxyAOHMx1XVCrSeajltTjmSSfZ1B/MH+BnnrRpz/LNcztj9l9/4ZVPvyaNVz47tRYv8agh8KkwfYqaIEO3Vk6yEdUnWDeCkDVXP8h/7YcYxStVHrRDKDNjkI0yNitolYeoX14AA"
+    "width": 1200,
+    "height": 1490,
+    "alt": "[EJEMPLO] Estructura metálica de la nave en obra",
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JaQAAW9I72omy//ToAP7tTbNiHN8HahuJ55DDGC+/xB3ssvSqrU0TD5lW+rGJkoWAHLjh7J2U4RiOj9bAlSVlNBljbX45fHQIbT2b2SyAAA=="
   },
   "etapa-ejecucion": {
     "src": "/img/etapa-ejecucion.webp",
-    "width": 720,
-    "height": 1280,
-    "alt": "Fachada vidriada de la nave durante la ejecución",
-    "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoQABwAPu1iqU2ppaOiMAgBMB2JYwCo9BexrMzlEcthlSVRC5AA/tc363H1gILaG6Dre2mSbo6Vh3U0j0jY59Y14dvjOYUfpt7HWTt1xXUta8sIpIZzS8BVEehX2yqqVAygVxw6SfsSlyqcHP7HNSOjjcm3QYCo6Z8suGR0NZcAAA=="
+    "width": 1200,
+    "height": 1490,
+    "alt": "[EJEMPLO] La nave en ejecución, con parte del vidriado colocado",
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdACHW6C2Wz3RS6iAA/t7FjxL3eH1LzEgKybLIHyYaa85ikW+L8Rf3IVK0YseX5/GaukSxmOIG56oS4GKfjHAK956hBNN5VoDxB9fQQSm0AAA="
   },
   "etapa-terminada": {
     "src": "/img/etapa-terminada.webp",
-    "width": 720,
-    "height": 1280,
-    "alt": "La nave terminada e iluminada de noche",
-    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwAwCdASoQABwAPu1iqU2ppaOiMAgBMB2JZQABHuqbvAMjF2pUAAD+/odzzIm1v5yopWfDJA6hfE7JZmTlSEBHbmAtr3hhDAcRkk6LRFcS4UjBzJX8VbHz6JKJ2lQXrLW1GCln2uOGMDsAAAA="
+    "width": 1200,
+    "height": 1490,
+    "alt": "[EJEMPLO] La nave terminada e iluminada en la hora azul",
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQBACdASoQABQAPu1iqU2ppaQiMAgBMB2JbACdMoMYAEmKvKbsv8pm9xIAAPpp5A2Bj9ffPO0CeWFIJNOKdVDHK+xFJFF9mVRNJFz/QQPjbzmpBGbfZx6NqBYSuYITYeNcSNEkxeBd3t1ldLDgAA=="
+  },
+  "cta": {
+    "src": "/img/cta.webp",
+    "width": 2000,
+    "height": 1116,
+    "alt": "[EJEMPLO] Esquina del frente vidriado al atardecer",
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAwAgCdASoQAAkAA4BaJYgCdEf/ggeRiN4U8AD8s6nrvHSnaLQEB1qb13/cWM4fNAfWgq2vjtRxFZhOZ0eWkQ/U0VO471CQ9096wAAA"
   }
 }

@@ -23,7 +23,7 @@ export default async function HomePage() {
       <Proceso secuencia={sitio.secuencia} />
       <Marquee />
       <Destacadas obras={destacadas} instagram={sitio.instagram} />
-      <CtaFinal img={sitio.secuencia.terminada ?? sitio.hero.desktop} whatsappHref={wa} />
+      <CtaFinal img={sitio.cta} whatsappHref={wa} />
       <Contacto sitio={sitio} />
     </>
   )

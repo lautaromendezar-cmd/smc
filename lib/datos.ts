@@ -14,6 +14,7 @@ export type Sitio = {
   quienesSomos: string
   anios: number
   hero: { desktop: Img | null; movil: Img | null }
+  cta: Img | null
   secuencia: { estructura: Img | null; ejecucion: Img | null; terminada: Img | null }
 }
 
@@ -35,6 +36,7 @@ export async function getSitio(): Promise<Sitio> {
       // si hay hero en Sanity pero no versión móvil, se recorta el mismo (no se mezcla con el respaldo)
       movil: fromSanity(c?.heroImagenMovil) ?? (c?.heroImagen?.asset ? null : localImg('hero-movil')),
     },
+    cta: fromSanity(c?.ctaImagen, 'Obra terminada') ?? localImg('cta'),
     secuencia: {
       estructura: fromSanity(c?.secuencia?.estructura, 'Estructura de la obra') ?? localImg('etapa-estructura'),
       ejecucion: fromSanity(c?.secuencia?.ejecucion, 'Obra en ejecución') ?? localImg('etapa-ejecucion'),

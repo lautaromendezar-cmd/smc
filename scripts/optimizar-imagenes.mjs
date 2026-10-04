@@ -4,8 +4,6 @@
  *
  * - Respaldo local de hero y secuencia de obra: se usan solo si Sanity no
  *   está configurado o el campo está vacío. El contenido real vive en Sanity.
- * - Mejora suave de los frames de Instagram (ruido de compresión, nitidez,
- *   un poco de exposición en las nocturnas).
  * - WebP <= 300 KB + placeholder blur en content/imagenes-locales.json.
  *
  * Uso: node scripts/optimizar-imagenes.mjs
@@ -14,19 +12,21 @@ import { readFile, writeFile, mkdir, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
-import { mejorar } from './lib/mejorar.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const FRAMES = path.join(ROOT, 'material', 'frames')
+const GENERADAS = path.join(ROOT, 'material', 'generadas')
 const OUT = path.join(ROOT, 'public', 'img')
 const MAX_BYTES = 300 * 1024
 
+// [EJEMPLO]: imágenes generadas con IA (Nano Banana Pro) a partir de los frames
+// reales de la nave. Se reemplazan por fotos reales cuando el cliente las mande.
 const ASSETS = [
-  { name: 'hero', src: 'nave-noche-aerea.png', noche: true, alt: 'Nave comercial con frente vidriado iluminada de noche, vista aérea' },
-  { name: 'hero-movil', src: 'nave-noche-galeria-iluminada.png', noche: true, alt: 'Galería de una nave comercial iluminada de noche' },
-  { name: 'etapa-estructura', src: 'nave-estructura-metalica-frente.png', alt: 'Estructura metálica de una nave comercial en obra' },
-  { name: 'etapa-ejecucion', src: 'nave-fachada-vidriada-ejecucion.png', alt: 'Fachada vidriada de la nave durante la ejecución' },
-  { name: 'etapa-terminada', src: 'nave-noche-galeria-iluminada.png', noche: true, alt: 'La nave terminada e iluminada de noche' },
+  { name: 'hero', src: 'hero.png', width: 2400, alt: '[EJEMPLO] Nave comercial con frente vidriado iluminada en la hora azul' },
+  { name: 'hero-movil', src: 'hero-movil.png', width: 1080, alt: '[EJEMPLO] Galería de una nave comercial iluminada de noche' },
+  { name: 'etapa-estructura', src: 'etapa-estructura.png', width: 1200, alt: '[EJEMPLO] Estructura metálica de la nave en obra' },
+  { name: 'etapa-ejecucion', src: 'etapa-ejecucion.png', width: 1200, alt: '[EJEMPLO] La nave en ejecución, con parte del vidriado colocado' },
+  { name: 'etapa-terminada', src: 'etapa-terminada.png', width: 1200, alt: '[EJEMPLO] La nave terminada e iluminada en la hora azul' },
+  { name: 'cta', src: 'cta.png', width: 2000, alt: '[EJEMPLO] Esquina del frente vidriado al atardecer' },
 ]
 
 async function encode(input, width) {
@@ -41,15 +41,14 @@ async function main() {
   await mkdir(OUT, { recursive: true })
   const meta = {}
   for (const a of ASSETS) {
-    const file = path.join(FRAMES, a.src)
+    const file = path.join(GENERADAS, a.src)
     try {
       await stat(file)
     } catch {
       console.warn(`falta ${a.src}, se usa placeholder de marca`)
       continue
     }
-    const improved = await mejorar(await readFile(file), { noche: a.noche })
-    const buf = await encode(improved, 1600)
+    const buf = await encode(await readFile(file), a.width)
     await writeFile(path.join(OUT, `${a.name}.webp`), buf)
     const { width, height } = await sharp(buf).metadata()
     const blur = await sharp(buf).resize(16).webp({ quality: 40 }).toBuffer()

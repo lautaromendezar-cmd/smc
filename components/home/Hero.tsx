@@ -181,19 +181,6 @@ export default function Hero({ desktop, movil, whatsappHref }: { desktop: Img | 
         </div>
       </div>
 
-      {/* indicador de scroll */}
-      <div
-        data-hero-hide
-        data-hero-fade
-        className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 lg:flex"
-        aria-hidden="true"
-      >
-        <span className="eyebrow text-[0.65rem] text-warm-300">{t.scroll}</span>
-        <span className="relative block h-12 w-px overflow-hidden bg-white/20">
-          <span className="absolute inset-x-0 top-0 h-1/2 animate-[scrollcue_2.2s_var(--ease-arch)_infinite] bg-white" />
-        </span>
-      </div>
-      <style>{`@keyframes scrollcue{0%{transform:translateY(-100%)}100%{transform:translateY(200%)}}`}</style>
     </section>
   )
 }
