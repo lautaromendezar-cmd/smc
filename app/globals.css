@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ */
+/* Tokens                                                              */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-ink: #0b0b0b;
+  --color-ink-2: #131211;
+  --color-ink-3: #1c1a18;
+  --color-bone: #f4f1ec;
+  --color-sand: #e8e3db;
+
+  /* grises cálidos (contraste medido: 300 y 400 pasan AA sobre ink; 600 sobre bone) */
+  --color-warm-200: #d6d0c6;
+  --color-warm-300: #b9b2a7;
+  --color-warm-400: #9a9387;
+  --color-warm-500: #7d776d;
+  --color-warm-600: #6b655c;
+  --color-warm-700: #4a453f;
+  --color-warm-800: #2b2825;
+
+  /* rojo ladrillo medido del logo (#7E382C). Fondo de CTA y acentos.
+     Para TEXTO rojo sobre oscuro se usa brick-300 (5,8:1). */
+  --color-brick: #7e382c;
+  --color-brick-600: #964536;
+  --color-brick-300: #d0705d;
+
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-arch: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --animate-marquee: marquee 48s linear infinite;
+  @keyframes marquee {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+@layer base {
+  html {
+    background: var(--color-ink);
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-brick);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brick-300);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .tema-claro :focus-visible {
+    outline-color: var(--color-brick);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  img {
+    -webkit-user-drag: none;
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilidades                                                          */
+/* ------------------------------------------------------------------ */
+@utility container-x {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 16px;
+  @media (width >= 48rem) {
+    padding-inline: 32px;
+  }
+  @media (width >= 80rem) {
+    padding-inline: 48px;
+  }
+}
+
+/* grilla sutil tipo papel milimetrado */
+@utility grid-plano {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+@utility grid-plano-claro {
+  background-image:
+    linear-gradient(to right, rgb(11 11 11 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(11 11 11 / 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* máscara para reveals: el hijo entra desde abajo */
+@utility mask-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+/* ------------------------------------------------------------------ */
+/* Movimiento reducido: nada de animaciones decorativas               */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
