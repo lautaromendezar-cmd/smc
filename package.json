@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@sanity/client": "^7.27.0",
     "@sanity/image-url": "^2.1.1",
     "@sanity/locale-es-es": "^1.2.39",
     "@sanity/vision": "^6.17.0",
