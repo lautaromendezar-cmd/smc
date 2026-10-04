@@ -18,7 +18,7 @@ npm run seed                 # carga configuración + obras [EJEMPLO] en Sanity
 ```
 
 Sin `NEXT_PUBLIC_SANITY_PROJECT_ID` el sitio funciona igual con los respaldos locales
-(`content/textos.ts`, `public/img`, `public/video`) y muestra el estado vacío en obras.
+(`content/textos.ts`, `public/img`) y muestra el estado vacío en obras.
 
 ## Variables de entorno
 
@@ -57,12 +57,15 @@ python scripts/extraer-frames.py      # videos de material/instagram -> un frame
 python scripts/curar-frames.py        # renombra los buenos y descarta duplicados/transiciones
 python scripts/cortar-logo.py         # logo.jpg -> public/brand (alfa sin redibujar) + geometría
 node scripts/optimizar-imagenes.mjs   # material/generadas -> public/img (WebP < 300 KB), OG, íconos
-bash scripts/video-loop.sh in.mp4 public/video/hero.mp4 1920   # loop sin salto, H.264 faststart
+bash scripts/video-loop.sh in.mp4 out.mp4 1920   # (opcional) loop de video real; se sube al panel
 ```
 
 - Todo lo generado con IA está marcado **[EJEMPLO]** (alt, títulos y comentarios). Hero,
-  secuencia de obra, cierre y videos: Nano Banana Pro / MiniMax H3 a partir de los frames
-  reales de la nave. Las 3 etapas de la secuencia comparten cámara para que los barridos calcen.
+  secuencia de obra y cierre: Nano Banana Pro a partir de los frames reales de la nave. Las
+  3 etapas de la secuencia comparten cámara para que los barridos calcen.
+- **Video del hero**: soportado (campo opcional en el panel, `components/home/HeroVideo.tsx`)
+  pero sin video de ejemplo: los generados con IA (MiniMax H3) se veían inestables y se
+  prefirió la foto fija. Si el cliente pasa un video real: `scripts/video-loop.sh`.
 - Imágenes de Sanity: loader propio (`sanity/lib/image.ts`) contra el CDN de Sanity con
   hotspot/crop y `auto=format`. Locales: optimizador de Next (AVIF/WebP).
 

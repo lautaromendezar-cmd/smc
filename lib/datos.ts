@@ -4,7 +4,6 @@ import { sanityFetch, TAGS } from '@/sanity/lib/fetch'
 import { configQuery, destacadasQuery, obraQuery, obrasQuery, slugsQuery } from '@/sanity/lib/queries'
 import type { ConfigSanity, ObraCard, ObraDetalle } from '@/sanity/lib/types'
 import { fromSanity, localImg, type Img } from './imagen'
-import { videoRespaldo } from '@/content/video-respaldo'
 import type { VideoHero } from '@/components/home/HeroVideo'
 
 export type Sitio = {
@@ -42,9 +41,7 @@ export async function getSitio(): Promise<Sitio> {
             desktop: [{ src: c.heroVideo, type: 'video/mp4' }],
             movil: c.heroVideoMovil ? [{ src: c.heroVideoMovil, type: 'video/mp4' }] : undefined,
           }
-        : c?.heroImagen?.asset
-          ? null
-          : videoRespaldo,
+        : null,
     },
     cta: fromSanity(c?.ctaImagen, 'Obra terminada') ?? localImg('cta'),
     secuencia: {
