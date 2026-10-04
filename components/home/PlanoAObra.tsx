@@ -11,8 +11,9 @@ type Props = { estructura: Img | null; ejecucion: Img | null; terminada: Img | n
 
 const SIZES = '(min-width: 1024px) 640px, 92vw'
 const ASPECT = 4 / 5
-// progreso en el que cambia la etapa visible (un poco antes de cada transición)
-const CORTES = [0.22, 0.47, 0.72]
+// progreso en el que cambia la etapa visible: la mitad de cada barrido de foto
+// (estructura 1–1,7 · ejecución 2–2,75 · terminada 3–3,6, sobre una timeline de 4)
+const CORTES = [0.34, 0.59, 0.83]
 
 function Regla() {
   return (
