@@ -1,0 +1,13 @@
+import { createClient } from 'next-sanity'
+import { apiVersion, dataset, isSanityConfigured, projectId } from '../env'
+
+export const client = isSanityConfigured
+  ? createClient({
+      projectId,
+      dataset,
+      apiVersion,
+      // sin CDN de la API: después de un webhook la revalidación lee el dato nuevo
+      useCdn: false,
+      perspective: 'published',
+    })
+  : null
