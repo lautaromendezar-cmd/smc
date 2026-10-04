@@ -17,7 +17,7 @@ export default async function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldScript(jsonLdEmpresa(sitio)) }} />
-      <Hero desktop={sitio.hero.desktop} movil={sitio.hero.movil} whatsappHref={wa} />
+      <Hero desktop={sitio.hero.desktop} movil={sitio.hero.movil} video={sitio.hero.video} whatsappHref={wa} />
       <Nosotros texto={sitio.quienesSomos} anios={sitio.anios} />
       <Servicios />
       <Proceso secuencia={sitio.secuencia} />

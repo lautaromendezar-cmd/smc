@@ -10,6 +10,7 @@ import { intro } from '@/lib/intro'
 import { sanityBaseUrl, sanityLoader } from '@/sanity/lib/image'
 import BotonCta from '@/components/ui/BotonCta'
 import Placeholder from '@/components/ui/Placeholder'
+import HeroVideo, { type VideoHero } from './HeroVideo'
 
 function imgProps(img: Img): Omit<ImageProps, 'alt'> & { alt: string } {
   const base = { alt: img.alt, fill: true, sizes: '100vw', quality: 75, fetchPriority: 'high' as const, loading: 'eager' as const }
@@ -49,7 +50,17 @@ function HeroPicture({ desktop, movil }: { desktop: Img | null; movil: Img | nul
   )
 }
 
-export default function Hero({ desktop, movil, whatsappHref }: { desktop: Img | null; movil: Img | null; whatsappHref: string }) {
+export default function Hero({
+  desktop,
+  movil,
+  video,
+  whatsappHref,
+}: {
+  desktop: Img | null
+  movil: Img | null
+  video: VideoHero | null
+  whatsappHref: string
+}) {
   const root = useRef<HTMLElement>(null)
 
   useGSAP(
@@ -80,7 +91,8 @@ export default function Hero({ desktop, movil, whatsappHref }: { desktop: Img | 
       const rotator = () => {
         const words = q('.hero-word')
         if (words.length < 2) return
-        gsap.set(words, { yPercent: 110 })
+        // ocultas con opacity (no con la clase translate de Tailwind: GSAP la lee como px en y)
+        gsap.set(words, { y: 0, yPercent: 110, opacity: 1 })
         gsap.set(words[0], { yPercent: 0 })
         const tl = gsap.timeline({ repeat: -1, delay: 1.6 })
         words.forEach((w, i) => {
@@ -124,6 +136,7 @@ export default function Hero({ desktop, movil, whatsappHref }: { desktop: Img | 
     <section ref={root} id="inicio" className="relative isolate h-[100svh] min-h-[600px] overflow-hidden bg-ink" aria-label="Portada">
       <div className="hero-media absolute inset-0 -z-10 origin-center will-change-transform">
         <HeroPicture desktop={desktop} movil={movil} />
+        {video && <HeroVideo video={video} />}
       </div>
       {/* overlay en degradé: legibilidad arriba (nav) y abajo (bajada/CTA) */}
       <div
@@ -132,7 +145,7 @@ export default function Hero({ desktop, movil, whatsappHref }: { desktop: Img | 
       />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_50%_45%,transparent_40%,rgba(11,11,11,0.55)_100%)]" aria-hidden="true" />
 
-      <div className="container-x flex h-full flex-col pt-28 pb-6 md:pb-10">
+      <div className="container-x flex h-full flex-col pt-28 pb-24 md:pr-24 md:pb-10">
         <div className="flex flex-1 flex-col items-center justify-center text-center">
           <p data-hero-hide data-hero-fade className="eyebrow mb-6 text-warm-200 md:mb-8">
             {t.eyebrow}
@@ -147,9 +160,9 @@ export default function Hero({ desktop, movil, whatsappHref }: { desktop: Img | 
           <div data-hero-hide data-hero-fade className="mt-7 flex items-center gap-3 text-base text-warm-200 md:mt-9 md:text-lg">
             <span className="block size-1.5 bg-brick-300" aria-hidden="true" />
             <span className="sr-only">{t.rotativas.join(', ')}</span>
-            <span className="relative inline-block h-[1.4em] min-w-[13ch] overflow-hidden text-left" aria-hidden="true">
+            <span className="relative inline-block h-[1.4em] w-[19ch] overflow-hidden text-left" aria-hidden="true">
               {t.rotativas.map((w, i) => (
-                <span key={w} className={`hero-word absolute inset-x-0 top-0 block whitespace-nowrap ${i ? 'translate-y-[110%]' : ''}`}>
+                <span key={w} className={`hero-word absolute inset-x-0 top-0 block whitespace-nowrap ${i ? 'opacity-0' : ''}`}>
                   {w}
                 </span>
               ))}

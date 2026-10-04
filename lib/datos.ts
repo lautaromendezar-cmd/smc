@@ -4,6 +4,8 @@ import { sanityFetch, TAGS } from '@/sanity/lib/fetch'
 import { configQuery, destacadasQuery, obraQuery, obrasQuery, slugsQuery } from '@/sanity/lib/queries'
 import type { ConfigSanity, ObraCard, ObraDetalle } from '@/sanity/lib/types'
 import { fromSanity, localImg, type Img } from './imagen'
+import { videoRespaldo } from '@/content/video-respaldo'
+import type { VideoHero } from '@/components/home/HeroVideo'
 
 export type Sitio = {
   telefono: string
@@ -13,7 +15,7 @@ export type Sitio = {
   instagram: string
   quienesSomos: string
   anios: number
-  hero: { desktop: Img | null; movil: Img | null }
+  hero: { desktop: Img | null; movil: Img | null; video: VideoHero | null }
   cta: Img | null
   secuencia: { estructura: Img | null; ejecucion: Img | null; terminada: Img | null }
 }
@@ -35,6 +37,14 @@ export async function getSitio(): Promise<Sitio> {
       desktop: heroDesktop,
       // si hay hero en Sanity pero no versión móvil, se recorta el mismo (no se mezcla con el respaldo)
       movil: fromSanity(c?.heroImagenMovil) ?? (c?.heroImagen?.asset ? null : localImg('hero-movil')),
+      video: c?.heroVideo
+        ? {
+            desktop: [{ src: c.heroVideo, type: 'video/mp4' }],
+            movil: c.heroVideoMovil ? [{ src: c.heroVideoMovil, type: 'video/mp4' }] : undefined,
+          }
+        : c?.heroImagen?.asset
+          ? null
+          : videoRespaldo,
     },
     cta: fromSanity(c?.ctaImagen, 'Obra terminada') ?? localImg('cta'),
     secuencia: {

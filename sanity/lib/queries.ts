@@ -34,6 +34,8 @@ export const configQuery = defineQuery(`*[_type == "configuracion" && _id == "co
   "heroImagen": heroImagen${imagen},
   "heroImagenMovil": heroImagenMovil${imagen},
   "ctaImagen": ctaImagen${imagen},
+  "heroVideo": heroVideo.asset->url,
+  "heroVideoMovil": heroVideoMovil.asset->url,
   "secuencia": {
     "estructura": secuencia.estructura${imagen},
     "ejecucion": secuencia.ejecucion${imagen},

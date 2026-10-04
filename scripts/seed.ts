@@ -63,6 +63,18 @@ async function img(file: string, alt: string, opts: { galeria?: boolean } = {}):
   return { _type: 'imagenConAlt', ...(opts.galeria ? { _key: key() } : {}), asset: { _type: 'reference', _ref: id }, alt }
 }
 const frame = (name: string) => path.join(FRAMES, `${name}.png`)
+
+async function video(file: string) {
+  try {
+    await stat(file)
+  } catch {
+    console.warn(`  · falta ${path.relative(ROOT, file)}`)
+    return undefined
+  }
+  const asset = await client.assets.upload('file', await readFile(file), { filename: path.basename(file), contentType: 'video/mp4' })
+  console.log(`  ↑ ${path.basename(file)}`)
+  return { _type: 'file', asset: { _type: 'reference', _ref: asset._id } }
+}
 const gen = (name: string) => path.join(GENERADAS, `${name}.png`)
 
 async function galeria(items: [string, string][]) {
@@ -103,6 +115,8 @@ async function main() {
     aniosTrayectoria: r.aniosTrayectoria,
     heroImagen: await img(gen('hero'), '[EJEMPLO] Nave comercial con frente vidriado iluminada en la hora azul'),
     heroImagenMovil: await img(gen('hero-movil'), '[EJEMPLO] Galería de una nave comercial iluminada de noche'),
+    heroVideo: await video(path.join(ROOT, 'public', 'video', 'hero.mp4')),
+    heroVideoMovil: await video(path.join(ROOT, 'public', 'video', 'hero-movil.mp4')),
     ctaImagen: await img(gen('cta'), '[EJEMPLO] Esquina del frente vidriado al atardecer'),
     secuencia: {
       estructura: await img(gen('etapa-estructura'), '[EJEMPLO] Estructura metálica de la nave en obra'),

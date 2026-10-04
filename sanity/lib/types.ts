@@ -37,6 +37,8 @@ export type ConfigSanity = {
   heroImagen?: SanityImg | null
   heroImagenMovil?: SanityImg | null
   ctaImagen?: SanityImg | null
+  heroVideo?: string | null
+  heroVideoMovil?: string | null
   secuencia?: {
     estructura?: SanityImg | null
     ejecucion?: SanityImg | null

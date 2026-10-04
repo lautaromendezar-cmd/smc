@@ -93,6 +93,23 @@ export const configuracion = defineType({
       description: 'Una foto vertical para celulares. Si la dejás vacía, se recorta la imagen principal.',
     }),
     defineField({
+      name: 'heroVideo',
+      title: 'Video de portada (opcional)',
+      type: 'file',
+      group: 'imagenes',
+      options: { accept: 'video/mp4' },
+      description:
+        'Video corto en loop, sin sonido, horizontal (MP4, idealmente menos de 4 MB). Se reproduce sobre la imagen de portada. Si cambiás la imagen de portada, cambiá o borrá también este video.',
+    }),
+    defineField({
+      name: 'heroVideoMovil',
+      title: 'Video de portada para celular (opcional)',
+      type: 'file',
+      group: 'imagenes',
+      options: { accept: 'video/mp4' },
+      description: 'Versión vertical del video para celulares (MP4, menos de 3 MB). Si la dejás vacía, en celular se usa el horizontal.',
+    }),
+    defineField({
       name: 'ctaImagen',
       title: 'Imagen del cierre ("¿Tenés un proyecto en mente?")',
       type: 'imagenConAlt',
