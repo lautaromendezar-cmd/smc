@@ -79,6 +79,18 @@ export default function Footer({ sitio }: { sitio: Sitio }) {
             {empresa.profesional.rol}: {empresa.profesional.nombre} · {empresa.profesional.matriculas.join(' · ')}
           </p>
         </div>
+        <p className="mt-6 text-xs text-warm-400 md:pr-20">
+          Diseño Web:{' '}
+          <a
+            href="https://lautaromendez.com.ar"
+            target="_blank"
+            rel="noopener"
+            className="text-warm-300 underline-offset-4 transition-colors hover:text-white hover:underline"
+          >
+            Lautaro Mendez
+            <span className="sr-only"> (se abre en una pestaña nueva)</span>
+          </a>
+        </p>
       </div>
     </footer>
   )
