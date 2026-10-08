@@ -48,8 +48,6 @@ export const nav = [
 export const hero = {
   eyebrow: 'Arquitectura + Construcción',
   eyebrowLugar: 'Capilla del Señor',
-  titulo: 'Del plano a la llave en mano.',
-  // alternativa: 'Construimos lo que imaginás.'
   rotativas: ['Viviendas', 'Naves industriales', 'Locales comerciales', 'Obra pública', 'Remodelaciones'],
   bajada:
     'Más de 30 años diseñando y construyendo en Capilla del Señor y la región. Una empresa familiar que acompaña cada etapa.',

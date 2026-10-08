@@ -3,9 +3,9 @@
 import { useRef } from 'react'
 import Link from 'next/link'
 import { getImageProps, type ImageProps } from 'next/image'
-import { hero as t } from '@/content/textos'
+import { empresa, hero as t } from '@/content/textos'
 import type { Img } from '@/lib/imagen'
-import { gsap, SplitText, useGSAP, prefersReducedMotion } from '@/lib/gsap'
+import { gsap, useGSAP, prefersReducedMotion } from '@/lib/gsap'
 import { intro } from '@/lib/intro'
 import { sanityBaseUrl, sanityLoader } from '@/sanity/lib/image'
 import BotonCta from '@/components/ui/BotonCta'
@@ -77,8 +77,6 @@ export default function Hero({
       }
 
       // estado inicial controlado por GSAP; después se suelta la clase del <head>
-      const split = SplitText.create(q('h1')[0], { type: 'lines', mask: 'lines', linesClass: 'hero-line' })
-      gsap.set(split.lines, { yPercent: 110 })
       gsap.set(q('[data-hero-fade]'), { autoAlpha: 0, y: 24 })
       gsap.set(q('.hero-rule'), { scaleX: 0 })
       html.classList.remove('hero-pending')
@@ -105,7 +103,6 @@ export default function Hero({
       const reveal = () => {
         gsap
           .timeline({ defaults: { ease: 'expo.out' } })
-          .to(split.lines, { yPercent: 0, duration: 1.2, stagger: 0.09 }, 0)
           .to(q('.hero-rule'), { scaleX: 1, duration: 1.1, ease: 'power3.inOut' }, 0.25)
           .to(q('[data-hero-fade]'), { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.08 }, 0.35)
           .add(rotator, 0.6)
@@ -126,7 +123,6 @@ export default function Hero({
       return () => {
         intro.setHero(null)
         kenBurns?.kill()
-        split.revert()
       }
     },
     { scope: root },
@@ -151,13 +147,9 @@ export default function Hero({
             {t.eyebrow}
             <span className="hidden sm:inline"> · {t.eyebrowLugar}</span>
           </p>
-          <h1
-            data-hero-hide
-            className="max-w-[14ch] text-[clamp(2.9rem,10.5vw,9.25rem)] leading-[0.92] font-medium tracking-[-0.045em] text-white"
-          >
-            {t.titulo}
-          </h1>
-          <div data-hero-hide data-hero-fade className="mt-7 flex items-center gap-3 text-base text-warm-200 md:mt-9 md:text-lg">
+          {/* sin título visible (pedido del cliente); el h1 queda para buscadores y lectores de pantalla */}
+          <h1 className="sr-only">{empresa.nombre}</h1>
+          <div data-hero-hide data-hero-fade className="flex items-center gap-3 text-base text-warm-200 md:text-lg">
             <span className="block size-1.5 bg-brick-300" aria-hidden="true" />
             <span className="sr-only">{t.rotativas.join(', ')}</span>
             <span className="relative inline-block h-[1.4em] w-[19ch] overflow-hidden text-left" aria-hidden="true">
