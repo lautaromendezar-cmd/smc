@@ -223,6 +223,18 @@ async function main() {
       imagenPrincipal: await img(frame('institucional-pasillo-espera'), 'Pasillo de espera de un edificio institucional'),
       galeria: [],
     },
+    {
+      _id: 'obra-ejemplo-9',
+      titulo: '[EJEMPLO] Proyecto de vivienda en dos plantas',
+      slug: 'ejemplo-proyecto-vivienda-dos-plantas',
+      estado: 'render',
+      categoria: 'vivienda-familiar',
+      destacada: false,
+      descripcionCorta: 'Render del proyecto: ladrillo visto, revoque blanco y grandes aberturas al frente.',
+      descripcion: bloques(AVISO),
+      imagenPrincipal: await img(gen('familiar-dos-plantas-noche'), '[EJEMPLO] Render de la vivienda de dos plantas al anochecer'),
+      galeria: [],
+    },
   ]
 
   const tx = client.transaction()

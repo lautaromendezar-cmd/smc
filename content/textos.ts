@@ -145,7 +145,7 @@ export const obrasHome = {
 
 export const obrasPagina = {
   titulo: 'Obras',
-  bajada: 'Obras terminadas y en ejecución. Filtrá por estado o por tipo de obra.',
+  bajada: 'Obras terminadas, en ejecución y renders de proyectos. Filtrá por estado o por tipo de obra.',
   filtroEstado: 'Estado',
   filtroCategoria: 'Tipo de obra',
   todas: 'Todas',

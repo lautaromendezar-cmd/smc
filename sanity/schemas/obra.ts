@@ -46,9 +46,10 @@ export const obra = defineType({
       title: 'Estado',
       type: 'string',
       group: 'datos',
-      description: 'Cuando la obra se termina, cambiá esto a "Terminada" y publicá.',
+      description:
+        'Cuando la obra se termina, cambiá esto a "Terminada" y publicá. "Render" es para proyectos que todavía no se construyeron (imágenes de cómo va a quedar).',
       options: { list: [...ESTADOS], layout: 'radio', direction: 'horizontal' },
-      validation: (r) => r.required().error('Elegí si la obra está en ejecución o terminada.'),
+      validation: (r) => r.required().error('Elegí si la obra está en ejecución, terminada o es un render.'),
     }),
     defineField({
       name: 'categoria',

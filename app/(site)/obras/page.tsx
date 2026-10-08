@@ -9,7 +9,7 @@ import { ObrasExplorer, ObrasGrillaEstatica } from '@/components/obras/ObrasExpl
 export const metadata: Metadata = {
   title: 'Obras',
   description:
-    'Obras terminadas y en ejecución de SMC Arquitectura + Construcción: viviendas, naves industriales, locales comerciales, obra pública y remodelaciones.',
+    'Obras terminadas, en ejecución y renders de SMC Arquitectura + Construcción: viviendas, naves industriales, locales comerciales, obra pública y remodelaciones.',
   alternates: { canonical: '/obras' },
 }
 
@@ -19,7 +19,7 @@ export default async function ObrasPage() {
     <section className="bg-ink pt-32 pb-24 md:pt-44 md:pb-36" aria-labelledby="obras-titulo">
       <div className="container-x">
         <Reveal className="grid gap-8 pb-12 lg:grid-cols-12 lg:pb-16">
-          <h1 id="obras-titulo" data-split className="text-[clamp(3rem,10vw,8rem)] leading-[0.92] tracking-[-0.05em] text-white lg:col-span-7">
+          <h1 id="obras-titulo" data-split className="text-[clamp(2.1rem,5vw,4.25rem)] leading-[1.02] tracking-[-0.04em] text-white lg:col-span-7">
             {t.titulo}
           </h1>
           <p data-reveal className="max-w-md self-end text-lg leading-relaxed text-warm-300 lg:col-span-4 lg:col-start-9">

@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { CheckCircle2, HardHat, Layers, Settings } from 'lucide-react'
+import { Box, CheckCircle2, HardHat, Layers, Settings } from 'lucide-react'
 
 export const structure: StructureResolver = (S) =>
   S.list()
@@ -26,6 +26,17 @@ export const structure: StructureResolver = (S) =>
             .filter('_type == "obra" && estado == "terminada"')
             .defaultOrdering([{ field: 'orden', direction: 'asc' }])
             .initialValueTemplates([S.initialValueTemplateItem('obra-terminada')]),
+        ),
+      S.listItem()
+        .title('Renders')
+        .icon(Box)
+        .child(
+          S.documentList()
+            .title('Renders')
+            .schemaType('obra')
+            .filter('_type == "obra" && estado == "render"')
+            .defaultOrdering([{ field: 'orden', direction: 'asc' }])
+            .initialValueTemplates([S.initialValueTemplateItem('obra-render')]),
         ),
       S.listItem()
         .title('Todas las obras')

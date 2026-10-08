@@ -56,8 +56,8 @@ export function ObrasExplorer({ obras }: { obras: ObraCardT[] }) {
 
   return (
     <>
-      <div className="flex flex-col gap-6 border-y border-white/10 py-6 lg:flex-row lg:items-center lg:justify-between">
-        <div role="group" aria-label={t.filtroEstado} className="-mx-4 flex gap-2 overflow-x-auto px-4 lg:mx-0 lg:px-0">
+      <div className="flex flex-col gap-3 border-y border-white/10 py-6">
+        <div role="group" aria-label={t.filtroEstado} className="-mx-4 flex gap-2 overflow-x-auto px-4 lg:mx-0 lg:flex-wrap lg:overflow-visible lg:px-0">
           <Chip activo={!estado} onClick={() => setParam('estado', null)}>
             {t.todas}
           </Chip>
@@ -68,7 +68,7 @@ export function ObrasExplorer({ obras }: { obras: ObraCardT[] }) {
           ))}
         </div>
         {tiposConObras.length > 1 && (
-          <div role="group" aria-label={t.filtroCategoria} className="-mx-4 flex gap-2 overflow-x-auto px-4 lg:mx-0 lg:px-0">
+          <div role="group" aria-label={t.filtroCategoria} className="-mx-4 flex gap-2 overflow-x-auto px-4 lg:mx-0 lg:flex-wrap lg:overflow-visible lg:px-0">
             <Chip activo={!tipo} onClick={() => setParam('tipo', null)}>
               Todos los tipos
             </Chip>

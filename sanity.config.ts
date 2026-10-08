@@ -41,6 +41,12 @@ export default defineConfig({
         schemaType: 'obra',
         value: { estado: 'terminada', destacada: false },
       },
+      {
+        id: 'obra-render',
+        title: 'Render',
+        schemaType: 'obra',
+        value: { estado: 'render', destacada: false },
+      },
     ],
   },
   document: {

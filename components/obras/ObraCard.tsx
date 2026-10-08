@@ -40,7 +40,7 @@ export default function ObraCard({
           </div>
           <span
             className={`absolute top-3 left-3 inline-flex items-center gap-2 px-3 py-1.5 text-[0.7rem] font-medium tracking-[0.12em] uppercase backdrop-blur-sm ${
-              obra.estado === 'ejecucion' ? 'bg-brick/90 text-white' : 'bg-ink/75 text-warm-200'
+              obra.estado === 'ejecucion' ? 'bg-brick/90 text-white' : obra.estado === 'render' ? 'bg-bone/90 text-ink' : 'bg-ink/75 text-warm-200'
             }`}
           >
             {obra.estado === 'ejecucion' && <span className="size-1.5 animate-pulse bg-white motion-reduce:animate-none" aria-hidden="true" />}

@@ -3,6 +3,7 @@
 export const ESTADOS = [
   { title: 'En ejecución', value: 'ejecucion' },
   { title: 'Terminada', value: 'terminada' },
+  { title: 'Render', value: 'render' },
 ] as const
 
 export const CATEGORIAS = [
