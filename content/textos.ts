@@ -74,7 +74,7 @@ export const servicios = {
   items: [
     {
       icono: 'diseno',
-      titulo: 'Diseño arquitectónico y anteproyectos',
+      titulo: 'Diseño arquitectónico, anteproyectos y planos municipales',
       texto: 'Partimos de lo que necesitás, del terreno y del presupuesto para llegar a un anteproyecto claro, con el que puedas decidir.',
     },
     {
