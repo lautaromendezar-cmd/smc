@@ -86,26 +86,11 @@ export default function Hero({
         kenBurns = gsap.to(media, { scale: 1.07, duration: 22, ease: 'sine.inOut', yoyo: true, repeat: -1 })
       }
 
-      const rotator = () => {
-        const words = q('.hero-word')
-        if (words.length < 2) return
-        // ocultas con opacity (no con la clase translate de Tailwind: GSAP la lee como px en y)
-        gsap.set(words, { y: 0, yPercent: 110, opacity: 1 })
-        gsap.set(words[0], { yPercent: 0 })
-        const tl = gsap.timeline({ repeat: -1, delay: 1.6 })
-        words.forEach((w, i) => {
-          const next = words[(i + 1) % words.length]
-          tl.to(w, { yPercent: -110, duration: 0.7, ease: 'expo.inOut' }, i * 2.4)
-            .fromTo(next, { yPercent: 110 }, { yPercent: 0, duration: 0.7, ease: 'expo.inOut' }, i * 2.4)
-        })
-      }
-
       const reveal = () => {
         gsap
           .timeline({ defaults: { ease: 'expo.out' } })
           .to(q('.hero-rule'), { scaleX: 1, duration: 1.1, ease: 'power3.inOut' }, 0.25)
           .to(q('[data-hero-fade]'), { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.08 }, 0.35)
-          .add(rotator, 0.6)
       }
 
       const open = () => {
@@ -142,25 +127,9 @@ export default function Hero({
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_50%_45%,transparent_40%,rgba(11,11,11,0.55)_100%)]" aria-hidden="true" />
 
       <div className="container-x flex h-full flex-col pt-28 pb-24 md:pr-24 md:pb-10">
-        <div className="flex flex-1 flex-col items-center justify-center text-center">
-          <p data-hero-hide data-hero-fade className="eyebrow mb-6 text-warm-200 md:mb-8">
-            {t.eyebrow}
-            <span className="hidden sm:inline"> · {t.eyebrowLugar}</span>
-          </p>
-          {/* sin título visible (pedido del cliente); el h1 queda para buscadores y lectores de pantalla */}
-          <h1 className="sr-only">{empresa.nombre}</h1>
-          <div data-hero-hide data-hero-fade className="flex items-center gap-3 text-base text-warm-200 md:text-lg">
-            <span className="block size-1.5 bg-brick-300" aria-hidden="true" />
-            <span className="sr-only">{t.rotativas.join(', ')}</span>
-            <span className="relative inline-block h-[1.4em] w-[19ch] overflow-hidden text-left" aria-hidden="true">
-              {t.rotativas.map((w, i) => (
-                <span key={w} className={`hero-word absolute inset-x-0 top-0 block whitespace-nowrap ${i ? 'opacity-0' : ''}`}>
-                  {w}
-                </span>
-              ))}
-            </span>
-          </div>
-        </div>
+        {/* sin texto en el centro (pedido del cliente): manda la foto; el h1 queda para buscadores y lectores de pantalla */}
+        <h1 className="sr-only">{empresa.nombre}</h1>
+        <div className="flex-1" aria-hidden="true" />
 
         <div data-hero-hide className="hero-rule mb-6 h-px origin-left bg-white/25 md:mb-8" aria-hidden="true" />
 

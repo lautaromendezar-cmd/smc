@@ -46,9 +46,6 @@ export const nav = [
 ] as const
 
 export const hero = {
-  eyebrow: 'Arquitectura + Construcción',
-  eyebrowLugar: 'Capilla del Señor',
-  rotativas: ['Viviendas', 'Naves industriales', 'Locales comerciales', 'Obra pública', 'Remodelaciones'],
   bajada:
     'Más de 30 años diseñando y construyendo en Capilla del Señor y la región. Una empresa familiar que acompaña cada etapa.',
   ctaPrincipal: 'Coordiná una reunión',
