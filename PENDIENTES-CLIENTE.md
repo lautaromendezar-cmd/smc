@@ -22,6 +22,6 @@ Ordenado por impacto. Todo lo marcado **[EJEMPLO]** en el sitio hoy es provisori
 
 ## Para salir a producción (técnico, lo hacemos nosotros)
 
-- Acceso a la zona DNS de **smconstrucciones.com.ar** (para apuntarlo a Vercel).
+- DNS de **smconstrucciones.com.ar**: en curso, ver `CONTINUAR.md` (correo en DonWeb, sitio en Vercel).
 - `NEXT_PUBLIC_SITE_NOINDEX=false`, la URL definitiva en `NEXT_PUBLIC_SITE_URL`, y sumar el dominio a CORS y al webhook de Sanity.
 - Borrar las obras e imágenes [EJEMPLO] cuando estén las reales.
