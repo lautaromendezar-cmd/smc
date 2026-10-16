@@ -1,3 +1,18 @@
+# Estado al 16/10/2026: DOMINIO EN VIVO
+
+- Zona DNS creada por DonWeb (ticket). Cargado: A @ 216.150.1.1 y 216.150.16.1, CNAME www a Vercel; borrado el AAAA de @.
+  Correo intacto (MX mail/mx1, SPF, DMARC, DKIM, SRV, autoconfig/autodiscover).
+- https://smconstrucciones.com.ar y https://www.smconstrucciones.com.ar responden 200 con certificado de Vercel.
+- Vercel: NEXT_PUBLIC_SITE_URL=https://smconstrucciones.com.ar + redeploy (canonical ya apunta al dominio).
+- Sanity: CORS ya tenía el dominio y www. El webhook sigue en smc-topaz.vercel.app/api/revalidate:
+  es el mismo proyecto, así que revalida igual.
+- **NOINDEX sigue en true a propósito**: en Sanity siguen las obras [EJEMPLO]. Pasarlo a false (y redeploy)
+  cuando estén las fotos y obras reales (ver PENDIENTES-CLIENTE.md).
+- Falta: crear las casillas en DonWeb y probar un mail de ida y vuelta. Opcional: en Vercel → Domains,
+  redirigir www al dominio sin www (hoy los dos sirven 200; el canonical ya cubre SEO).
+
+---
+
 # Continuar: dominio y correo (15/10/2026)
 
 ## Decisión
