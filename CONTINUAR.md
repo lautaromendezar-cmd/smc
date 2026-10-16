@@ -27,7 +27,14 @@
 ## Lo que sigue
 
 1. Que Alfredo cargue obras reales y borre las 9 [EJEMPLO] (fotos reales de portada y secuencia, ver PENDIENTES-CLIENTE.md).
-2. Opcional: dar de alta el dominio en Google Search Console y mandar el sitemap.
+2. Search Console: propiedad de DOMINIO verificada el 16/10 por TXT en DonWeb (único propietario: Lautaro).
+   Ya traía datos viejos: el sitio anterior (Hostinger) fue hackeado en julio con spam SEO
+   (sitemaps `saiga.php?sitemap*.xml` y `ammika.php?sitemap*.xml`, ~1.034 páginas c/u). Hoy Vercel responde 403
+   a todo `.php` (firewall, `X-Vercel-Mitigated: deny`), así que Google las va a ir sacando.
+   Pasos indicados a Lautaro: quitar esos sitemaps, enviar `sitemap.xml`, y retirada de URLs por prefijo
+   (`/saiga.php`, `/ammika.php`). Revisar en unas semanas en Indexación → Páginas que hayan bajado.
+   Avisar a la clienta: si la cuenta de Hostinger sigue activa, cambiar contraseña o darla de baja.
+   El TXT `google-site-verification` de la zona DonWeb NO se borra (si se borra, se pierde la verificación).
 3. Recordarle a la clienta que el dominio vence el 02/01/2027.
 
 ---
