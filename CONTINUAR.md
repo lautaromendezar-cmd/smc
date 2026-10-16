@@ -8,8 +8,26 @@
   es el mismo proyecto, así que revalida igual.
 - **NOINDEX sigue en true a propósito**: en Sanity siguen las obras [EJEMPLO]. Pasarlo a false (y redeploy)
   cuando estén las fotos y obras reales (ver PENDIENTES-CLIENTE.md).
-- Falta: crear las casillas en DonWeb y probar un mail de ida y vuelta. Opcional: en Vercel → Domains,
-  redirigir www al dominio sin www (hoy los dos sirven 200; el canonical ya cubre SEO).
+- Correo: la casilla info@smconstrucciones.com.ar ya existe y recibe (llegó la invitación de Sanity).
+  Falta crear el resto de las casillas y probar que un mail enviado desde ahí no caiga en spam.
+  Opcional: en Vercel → Domains, redirigir www al dominio sin www (hoy los dos sirven 200; el canonical ya cubre SEO).
+
+## Panel y manual (16/10, tarde)
+
+- Panel probado de punta a punta: publicar, editar y borrar una obra llega al sitio en ~12-15 s (webhook OK).
+- **Alfredo (dueño) es editor en Sanity**: usuario "SM Construcciones", info@smconstrucciones.com.ar, entra con
+  E-mail / password. La contraseña la creó Lautaro y se la pasó.
+- Borrado el token robot "seed local (borrar despues)": el proyecto ya no tiene tokens. `scripts/seed.ts`
+  necesitaría uno nuevo si se vuelve a correr.
+- **Manual entregado a Alfredo** (PDF de 7 págs con capturas): `manual-panel/` (fuente, regeneración en su README).
+  Versión online editable: https://claude.ai/code/artifact/ab8b28c1-53fc-4e7a-8bec-426798f672f4
+- `GUIA-CLIENTE.md` quedó viejo (no tiene Renders y dice "Quitar" en vez de "Eliminar"): el manual vigente es el PDF.
+
+## Lo que sigue
+
+1. Que Alfredo cargue obras reales y borre las 9 [EJEMPLO] (fotos reales de portada y secuencia, ver PENDIENTES-CLIENTE.md).
+2. Con eso: `NEXT_PUBLIC_SITE_NOINDEX=false` en Vercel + `vercel deploy --prod --yes --scope lautaro-mendez-s-projects`.
+3. Recordarle a la clienta que el dominio vence el 02/01/2027.
 
 ---
 

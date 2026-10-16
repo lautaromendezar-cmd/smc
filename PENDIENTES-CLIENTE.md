@@ -22,6 +22,8 @@ Ordenado por impacto. Todo lo marcado **[EJEMPLO]** en el sitio hoy es provisori
 
 ## Para salir a producción (técnico, lo hacemos nosotros)
 
-- DNS de **smconstrucciones.com.ar**: en curso, ver `CONTINUAR.md` (correo en DonWeb, sitio en Vercel).
-- `NEXT_PUBLIC_SITE_NOINDEX=false`, la URL definitiva en `NEXT_PUBLIC_SITE_URL`, y sumar el dominio a CORS y al webhook de Sanity.
+- ~~DNS de **smconstrucciones.com.ar**~~: hecho el 16/10 (sitio en Vercel, correo en DonWeb).
+- ~~URL definitiva en `NEXT_PUBLIC_SITE_URL` y CORS de Sanity~~: hecho el 16/10.
+- `NEXT_PUBLIC_SITE_NOINDEX=false` + redeploy: cuando estén las obras reales.
+- ~~Cuenta del panel para el cliente~~: Alfredo es editor (info@) desde el 16/10, con manual en `manual-panel/`.
 - Borrar las obras e imágenes [EJEMPLO] cuando estén las reales.
