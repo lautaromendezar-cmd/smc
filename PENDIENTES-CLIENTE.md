@@ -24,6 +24,6 @@ Ordenado por impacto. Todo lo marcado **[EJEMPLO]** en el sitio hoy es provisori
 
 - ~~DNS de **smconstrucciones.com.ar**~~: hecho el 16/10 (sitio en Vercel, correo en DonWeb).
 - ~~URL definitiva en `NEXT_PUBLIC_SITE_URL` y CORS de Sanity~~: hecho el 16/10.
-- `NEXT_PUBLIC_SITE_NOINDEX=false` + redeploy: cuando estén las obras reales.
+- ~~`NEXT_PUBLIC_SITE_NOINDEX=false` + redeploy~~: hecho el 16/10 (el sitio ya es indexable).
 - ~~Cuenta del panel para el cliente~~: Alfredo es editor (info@) desde el 16/10, con manual en `manual-panel/`.
 - Borrar las obras e imágenes [EJEMPLO] cuando estén las reales.

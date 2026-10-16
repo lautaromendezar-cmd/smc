@@ -6,8 +6,9 @@
 - Vercel: NEXT_PUBLIC_SITE_URL=https://smconstrucciones.com.ar + redeploy (canonical ya apunta al dominio).
 - Sanity: CORS ya tenía el dominio y www. El webhook sigue en smc-topaz.vercel.app/api/revalidate:
   es el mismo proyecto, así que revalida igual.
-- **NOINDEX sigue en true a propósito**: en Sanity siguen las obras [EJEMPLO]. Pasarlo a false (y redeploy)
-  cuando estén las fotos y obras reales (ver PENDIENTES-CLIENTE.md).
+- **INDEXABLE desde el 16/10** (pedido de Lautaro, aunque sigan las obras [EJEMPLO]): NOINDEX=false + deploy
+  sin caché. Sin meta robots ni X-Robots-Tag; robots.txt permite todo menos /studio y /api; sitemap con 12 URLs.
+  Las [EJEMPLO] están en el sitemap: cuando Alfredo las borre dan 404 y Google las saca solo.
 - Correo: la casilla info@smconstrucciones.com.ar ya existe y recibe (llegó la invitación de Sanity).
   Falta crear el resto de las casillas y probar que un mail enviado desde ahí no caiga en spam.
   Opcional: en Vercel → Domains, redirigir www al dominio sin www (hoy los dos sirven 200; el canonical ya cubre SEO).
@@ -26,7 +27,7 @@
 ## Lo que sigue
 
 1. Que Alfredo cargue obras reales y borre las 9 [EJEMPLO] (fotos reales de portada y secuencia, ver PENDIENTES-CLIENTE.md).
-2. Con eso: `NEXT_PUBLIC_SITE_NOINDEX=false` en Vercel + `vercel deploy --prod --yes --scope lautaro-mendez-s-projects`.
+2. Opcional: dar de alta el dominio en Google Search Console y mandar el sitemap.
 3. Recordarle a la clienta que el dominio vence el 02/01/2027.
 
 ---
