@@ -17,6 +17,9 @@
 
 DonWeb todavía no creó la zona (ns1/ns2.donweb.com responden "Query refused"), así que el dominio no resuelve.
 Su soporte dijo que, pasada la caché, se conecta desde **Mis Servicios → Gestionar → Dominios configurados** (hosting #6514891).
+Ojo: los servidores de Hostinger publicaban sus NS con TTL de **24 h**, así que algunos resolvers (Google, 8.8.8.8)
+siguen mostrando `dns-parking` hasta ~16/10 a la noche aunque nic.ar ya delegue a DonWeb; Cloudflare ya ve DonWeb.
+Si DonWeb sigue diciendo "dominio en uso" o "delegación parcial", pedirle al soporte que lo vincule a mano al hosting.
 Con eso, seguir desde el paso 3. Las casillas a recrear son las que anotó la clienta; si quiere los mails viejos, bajarlos de Hostinger antes de que venza esa cuenta.
 
 ## Pasos (1 y 2 ya hechos)
