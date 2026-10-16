@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Manual del panel — SMC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 16mm 17mm 18mm; }
+  :root { --ink: #16181d; --muted: #5b606b; --line: #e3e5e9; --soft: #f5f6f8; --brick: #7e382c; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: Inter, sans-serif; font-size: 10.5pt; line-height: 1.5; color: var(--ink); background: #fff; }
+  h1, h2, h3 { font-family: Manrope, sans-serif; letter-spacing: -0.01em; margin: 0; }
+  p { margin: 0 0 2.2mm; }
+  strong { font-weight: 600; }
+
+  .portada { display: flex; align-items: center; justify-content: space-between; gap: 8mm; padding-bottom: 6mm; border-bottom: 1px solid var(--line); margin-bottom: 6mm; }
+  .portada img { height: 17mm; }
+  .portada h1 { font-size: 22pt; line-height: 1.15; }
+  .portada .sub { color: var(--muted); margin-top: 1.5mm; }
+  .regla { background: var(--soft); border-left: 3px solid var(--brick); padding: 3mm 4mm; margin: 4mm 0 2mm; }
+
+  section { margin-top: 9mm; }
+  section.salto { break-before: page; margin-top: 0; }
+  h2 + p, h2 + ol, h3 + p { break-before: avoid; }
+  h2 { font-size: 14.5pt; display: flex; align-items: baseline; gap: 3mm; margin-bottom: 3mm; break-after: avoid; }
+  h2 .n { color: var(--brick); font-size: 12pt; }
+  h3 { font-size: 11pt; margin: 4.5mm 0 1.5mm; break-after: avoid; }
+
+  ol, ul { margin: 0 0 2.5mm; padding-left: 5.5mm; }
+  li { margin-bottom: 1mm; padding-left: 0.5mm; }
+  ol li::marker { font-weight: 600; color: var(--brick); }
+
+  figure { margin: 3mm 0 4mm; break-inside: avoid; }
+  .cap { position: relative; display: inline-block; max-width: 100%; border: 1px solid var(--line); border-radius: 2mm; overflow: hidden; line-height: 0; }
+  .cap img { display: block; max-width: 100%; }
+  .cap .m { position: absolute; border: 2px solid var(--brick); border-radius: 1.5mm; box-shadow: 0 0 0 3px rgba(126,56,44,.18); }
+  .cap .m b { position: absolute; top: -3.2mm; right: -3.2mm; width: 5.2mm; height: 5.2mm; border-radius: 50%; background: var(--brick); color: #fff; font: 600 7.5pt/5.2mm Inter, sans-serif; text-align: center; }
+  figcaption { font-size: 9pt; color: var(--muted); margin-top: 1.5mm; line-height: 1.4; }
+  .esc { text-align: left; } .w-full .cap img { width: 100%; }
+  .w-80 .cap { width: 80%; } .w-80 .cap img { width: 100%; }
+  .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; align-items: start; break-inside: avoid; }
+  .dos .cap, .dos .cap img { width: 100%; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 2mm 0 3mm; break-inside: avoid; }
+  th, td { text-align: left; vertical-align: top; padding: 1.6mm 2.2mm; border-bottom: 1px solid var(--line); }
+  th { font-weight: 600; background: var(--soft); }
+  td:first-child { font-weight: 500; white-space: nowrap; }
+  .ok { color: var(--brick); font-weight: 600; }
+  .nota { font-size: 9.5pt; color: var(--muted); }
+  .aviso { border: 1px solid var(--line); border-radius: 2mm; padding: 3mm 4mm; margin: 3mm 0; break-inside: avoid; }
+  .aviso strong { color: var(--brick); }
+</style>
+</head>
+<body>
+
+<header class="portada">
+  <div>
+    <h1>Manual del panel</h1>
+    <div class="sub">Cómo cargar y cambiar las obras de smconstrucciones.com.ar</div>
+  </div>
+  <img src="img/logo.jpg" alt="SMC Arquitectura + Construcción">
+</header>
+
+<p>Desde el panel cargás y cambiás las obras, las fotos y los datos de contacto del sitio, sin tocar nada técnico. Funciona en la computadora y en el celular. Lo que publicás aparece en la web en unos 15 segundos.</p>
+<div class="regla"><strong>Lo más importante:</strong> nada se ve en la web hasta que tocás <strong>Publicar</strong>, el botón de abajo a la derecha. Mientras tanto, lo que cargás queda guardado como borrador.</div>
+
+<section>
+  <h2><span class="n">1</span>Entrar al panel</h2>
+  <ol>
+    <li>Abrí el navegador y andá a <strong>smconstrucciones.com.ar/studio</strong>. Guardala en favoritos.</li>
+    <li>La pantalla de ingreso está en inglés. Tocá <strong>E-mail / password</strong> y entrá con <strong>info@smconstrucciones.com.ar</strong> y tu contraseña.</li>
+    <li>Adentro, todo está en español. A la izquierda tenés el menú.</li>
+  </ol>
+  <div class="dos">
+    <figure><div class="cap" data-img="login"><span class="m" data-box="36,197,294,32"><b>2</b></span></div><figcaption>La pantalla de ingreso.</figcaption></figure>
+    <figure><div class="cap" data-img="menu"></div><figcaption>El menú: las obras separadas por estado, y la configuración del sitio.</figcaption></figure>
+  </div>
+  <div class="aviso" style="margin-top:7mm"><h3 style="margin-top:0">Si algo no se ve en la web</h3>
+  <ol style="margin-bottom:0">
+    <li>Esperá unos 15 segundos y recargá la página.</li>
+    <li>Fijate si tocaste <strong>Publicar</strong>. Si arriba de la obra está marcado <strong>Borrador</strong>, todavía hay cambios sin publicar.</li>
+    <li>Si sigue sin verse, escribile a Lautaro y lo revisa.</li>
+  </ol></div>
+</section>
+
+<section style="break-before:page;margin-top:0">
+  <h2><span class="n">2</span>Cargar una obra nueva</h2>
+  <ol>
+    <li>En el menú, entrá a la lista que corresponda: <strong>Obras en ejecución</strong>, <strong>Obras terminadas</strong> o <strong>Renders</strong>.</li>
+    <li>Tocá el <strong>+</strong> que está arriba de la lista. Se abre una obra en blanco.</li>
+  </ol>
+  <figure class="esc"><div class="cap" data-img="lista" data-esc="0.17"><span class="m" data-box="309,8,36,34"><b>2</b></span></div></figure>
+  <ol start="3">
+    <li>Completá los datos de la pestaña <strong>Datos</strong>:</li>
+  </ol>
+  <table>
+    <tr><th>Campo</th><th>Qué poner</th><th>¿Obligatorio?</th></tr>
+    <tr><td>Nombre de la obra</td><td>Ej.: "Nave comercial en Ruta 8"</td><td class="ok">Sí</td></tr>
+    <tr><td>Dirección web</td><td>Tocá <strong>Generar</strong> y se completa sola</td><td class="ok">Sí</td></tr>
+    <tr><td>Estado</td><td>Ya viene marcado según la lista desde la que creaste la obra</td><td class="ok">Sí</td></tr>
+    <tr><td>Tipo de obra</td><td>Vivienda familiar, vivienda rural, industrial, comercial, obra pública o remodelación / ampliación</td><td class="ok">Sí</td></tr>
+    <tr><td>Ubicación</td><td>La localidad o la zona, no la dirección exacta</td><td>No</td></tr>
+    <tr><td>Año</td><td>El de terminación, o el de inicio si está en ejecución</td><td>No</td></tr>
+    <tr><td>Descripción corta</td><td>Una o dos frases, hasta 200 caracteres. Se ve en las tarjetas</td><td>No</td></tr>
+    <tr><td>Descripción completa</td><td>Qué se hizo, materiales, desafíos</td><td>No</td></tr>
+  </table>
+  <figure class="esc"><div class="cap" data-img="nueva" data-esc="0.15"><span class="m" data-box="530,218,78,38"><b>3</b></span></div><figcaption>Escribí el nombre y tocá Generar para crear la dirección web.</figcaption></figure>
+  <div style="break-inside:avoid">
+  <ol start="4">
+    <li>Pasá a la pestaña <strong>Fotos</strong> y subí la <strong>Foto principal</strong> (punto 4).</li>
+    <li>Tocá <strong>Publicar</strong>. Si falta algo obligatorio, el panel lo marca en rojo y te dice qué es.</li>
+  </ol>
+  <figure class="esc"><div class="cap" data-img="publicar"><span class="m" data-box="59,9,92,30"><b>5</b></span></div><figcaption>El botón Publicar se activa cuando hay cambios para publicar.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Cambiar el estado de una obra</h2>
+  <p>Cada obra tiene uno de tres estados, y en la web se muestra con esa etiqueta:</p>
+  <ul>
+    <li><strong>En ejecución</strong>: la obra se está construyendo.</li>
+    <li><strong>Terminada</strong>: la obra ya está entregada.</li>
+    <li><strong>Render</strong>: un proyecto que todavía no se construyó, mostrado con imágenes de cómo va a quedar.</li>
+  </ul>
+  <p>Para cambiarlo, por ejemplo cuando se termina una obra: abrí la obra, marcá el estado nuevo, sumá las fotos finales si querés y tocá <strong>Publicar</strong>. La obra se pasa sola a la lista que corresponde, en el panel y en la web.</p>
+  <figure class="esc"><div class="cap" data-img="estado" data-esc="0.17"><span class="m" data-box="16,100,606,50"></span></div></figure>
+
+  <h2 style="margin-top:7mm"><span class="n">4</span>Subir fotos</h2>
+  <h3>Foto principal</h3>
+  <p>Es la portada de la obra: elegí la mejor que tengas. Arrastrá la foto al recuadro o tocá el botón para subirla desde la computadora o el celular.</p>
+  <p>Cada foto pide una <strong>Descripción de la imagen</strong>: una frase corta que cuente qué se ve, por ejemplo "Frente de la nave con vidrios, de noche". Es obligatoria, porque la usan Google y las personas que navegan con lector de pantalla.</p>
+  <div class="aviso"><strong>Para que las fotos se vean bien:</strong> subí siempre el archivo original, en alta calidad (el sitio las achica solo para que carguen rápido). No uses capturas de Instagram ni fotos reenviadas por WhatsApp, porque pierden mucha calidad. Mejor con buena luz, derechas y sin gente.</div>
+  <figure class="esc"><div class="cap" data-img="fotos" data-esc="0.14"><span class="m" data-box="540,68,34,32"><b>1</b></span></div><figcaption>El botón marcado abre el recorte de la foto (ver la página siguiente).</figcaption></figure>
+</section>
+
+<section>
+  <h3 style="margin-top:0;break-before:page">Qué parte de la foto se ve</h3>
+  <p>En las tarjetas del sitio las fotos se recortan. Para que no se corte lo importante, tocá el botón de <strong>recorte</strong> de la foto y mové el <strong>círculo</strong> hacia lo principal, por ejemplo el frente de la casa. Abajo se ve cómo queda en cada formato. Cerrá con la cruz.</p>
+  <figure class="esc"><div class="cap" data-img="recorte" data-esc="0.14"></div></figure>
+
+  <div style="break-inside:avoid">
+  <h3>Galería de fotos</h3>
+  <ul>
+    <li>Para <strong>sumar fotos</strong>, tocá <strong>Añadir elemento</strong>, o arrastrá varias juntas desde la carpeta y soltalas sobre la galería.</li>
+    <li>Para <strong>cambiar el orden</strong>, agarrá la foto desde los puntitos de arriba a la izquierda y arrastrala a su lugar.</li>
+    <li>Para <strong>sacar una foto</strong>, tocá los tres puntos debajo de ella y elegí <strong>Eliminar</strong>. Se borra solo de la galería.</li>
+  </ul>
+  <figure class="esc"><div class="cap" data-img="galeria" data-esc="0.16"><span class="m" data-box="32,88,30,30"><b>1</b></span><span class="m" data-box="128,218,32,30"><b>2</b></span><span class="m" data-box="40,250,212,34"><b>3</b></span></div><figcaption>1: arrastrar para ordenar. 2: menú de la foto. 3: Eliminar.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2 style="break-before:page"><span class="n">5</span>Destacar obras en la página de inicio</h2>
+  <p>La página de inicio muestra hasta 6 obras destacadas.</p>
+  <div style="break-inside:avoid">
+  <ol>
+    <li>Abrí la obra y pasá a la pestaña <strong>Página de inicio</strong>.</li>
+    <li>Activá <strong>Destacar en la página de inicio</strong>.</li>
+    <li>En <strong>Orden</strong>, escribí un número: la obra con el 1 aparece primero. Si lo dejás vacío, va al final.</li>
+    <li>Tocá <strong>Publicar</strong>.</li>
+  </ol>
+  <figure class="esc"><div class="cap" data-img="inicio" data-esc="0.17"><span class="m" data-box="22,24,240,42"><b>2</b></span><span class="m" data-box="16,210,610,40"><b>3</b></span></div><figcaption>En las listas del panel, las obras destacadas llevan una estrella (★).</figcaption></figure>
+  </div>
+
+  <h2 style="margin-top:7mm"><span class="n">6</span>Cambiar la portada y la secuencia de obra</h2>
+  <p>Está todo en <strong>Configuración del sitio</strong>, pestaña <strong>Imágenes</strong>. Cuando termines, tocá <strong>Publicar</strong>.</p>
+  <table>
+    <tr><th>Campo</th><th>Dónde se ve</th><th>Recomendación</th></tr>
+    <tr><td>Imagen principal de la portada</td><td>La foto grande al entrar al sitio</td><td>Horizontal, de noche o al atardecer, de al menos 2000 px de ancho</td></tr>
+    <tr><td>Portada para celular</td><td>La portada en celulares (opcional)</td><td>Vertical. Si queda vacía, se recorta la principal</td></tr>
+    <tr><td>Video de portada</td><td>Sobre la foto de portada, en loop y sin sonido (opcional)</td><td>MP4 horizontal, menos de 4 MB</td></tr>
+    <tr><td>Video para celular</td><td>Lo mismo, en celulares (opcional)</td><td>MP4 vertical, menos de 3 MB</td></tr>
+    <tr><td>Imagen del cierre</td><td>El fondo de "¿Tenés un proyecto en mente?"</td><td>Oscura o de noche: el texto va encima</td></tr>
+    <tr><td>Secuencia de obra</td><td>"Del plano a la obra terminada"</td><td>3 fotos verticales: estructura, en ejecución y terminada</td></tr>
+  </table>
+  <div class="aviso"><strong>Importante:</strong> si cambiás la foto de portada, cambiá o borrá también el video. Si no, va a seguir apareciendo el video anterior encima.</div>
+</section>
+
+<section>
+  <div class="dos">
+    <figure><div class="cap" data-img="imagenes"><span class="m" data-box="312,12,82,28"><b>1</b></span></div><figcaption>Configuración del sitio, pestaña Imágenes.</figcaption></figure>
+    <figure><div class="cap" data-img="secuencia"></div><figcaption>Las tres fotos de la secuencia quedan mejor si son de la misma obra, sacadas desde el mismo lugar: así se ve cómo crece.</figcaption></figure>
+  </div>
+
+  <h2 style="margin-top:6mm"><span class="n">7</span>Cambiar teléfono, WhatsApp y Quiénes somos</h2>
+  <p>En <strong>Configuración del sitio</strong>, pestañas <strong>Contacto</strong> y <strong>Empresa</strong>. Después, tocá <strong>Publicar</strong>.</p>
+  <ul>
+    <li><strong>Teléfono</strong>: como querés que se lea en la web. Ej.: 11 4940-0955.</li>
+    <li><strong>WhatsApp</strong>: solo números, sin espacios ni "+". Va 549, la característica sin el 0 y el número sin el 15. Ej.: 5491149400955.</li>
+    <li><strong>Email</strong> e <strong>Instagram</strong>: si los dejás vacíos, no se muestran. El link de Instagram va completo, empezando con https://.</li>
+    <li><strong>Quiénes somos</strong>: para separar párrafos, dejá una línea en blanco entre uno y otro.</li>
+    <li><strong>Años de trayectoria</strong>: el número del "+30 años". Actualizalo cuando corresponda.</li>
+  </ul>
+  <div class="dos">
+    <figure><div class="cap" data-img="contacto"></div><figcaption>Pestaña Contacto.</figcaption></figure>
+    <figure><div class="cap" data-img="empresa"></div><figcaption>Pestaña Empresa.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2 style="break-before:page"><span class="n">8</span>Borrar las obras de ejemplo</h2>
+  <p>Hoy el sitio tiene 9 obras de muestra. Su nombre empieza con <strong>[EJEMPLO]</strong> y sus fotos están hechas con inteligencia artificial, solo para ver cómo queda todo. Cuando cargues las obras reales, borralas:</p>
+  <ol>
+    <li>Abrí cada obra <strong>[EJEMPLO]</strong>.</li>
+    <li>Tocá los <strong>tres puntos</strong> de abajo a la derecha, al lado de Publicar.</li>
+    <li>Elegí <strong>Eliminar</strong> y confirmá.</li>
+  </ol>
+  <figure class="esc"><div class="cap" data-img="eliminar"><span class="m" data-box="594,159,32,32"><b>2</b></span><span class="m" data-box="434,120,190,38"><b>3</b></span></div></figure>
+  <p>Con las imágenes de la portada y de la secuencia no hace falta borrar nada: reemplazalas por fotos reales (punto 6).</p>
+
+</section>
+
+<script>
+  // arma cada captura y pasa las marcas de píxeles a porcentajes
+  for (const cap of document.querySelectorAll('.cap[data-img]')) {
+    const img = new Image(); img.src = 'img/' + cap.dataset.img + '.png'; img.alt = '';
+    cap.prepend(img);
+    if (!cap.closest('.dos')) img.addEventListener('load', () => { img.style.width = Math.min(img.naturalWidth * (cap.dataset.esc || 0.2), 176) + 'mm'; });
+    img.addEventListener('load', () => {
+      for (const m of cap.querySelectorAll('.m')) {
+        const [x, y, w, h] = m.dataset.box.split(',').map(Number);
+        Object.assign(m.style, { left: x / img.naturalWidth * 100 + '%', top: y / img.naturalHeight * 100 + '%', width: w / img.naturalWidth * 100 + '%', height: h / img.naturalHeight * 100 + '%' });
+      }
+    });
+  }
+</script>
+</body>
+</html>
