@@ -9,12 +9,17 @@
 ## Ya hecho
 
 - `smconstrucciones.com.ar` y `www.smconstrucciones.com.ar` agregados al proyecto en Vercel (verificados, esperando DNS).
+- **Delegado en nic.ar a `ns1.donweb.com` / `ns2.donweb.com`** (15/10, publicado por nic.ar a las 21:11).
+  Antes estaba en Hostinger (`solar`/`lunar.dns-parking.com`) con correo ahí (MX `mx1/mx2.hostinger.com`).
+  La clienta sabe que ese correo se corta: anotó las direcciones y usa otro mail mientras tanto.
 
 ## En espera
 
-DonWeb todavía no habilita la zona DNS del plan contratado. Hasta que aparezca, **no delegar en nic.ar**: si se delega antes, el sitio y el correo se caen.
+DonWeb todavía no creó la zona (ns1/ns2.donweb.com responden "Query refused"), así que el dominio no resuelve.
+Su soporte dijo que, pasada la caché, se conecta desde **Mis Servicios → Gestionar → Dominios configurados** (hosting #6514891).
+Con eso, seguir desde el paso 3. Las casillas a recrear son las que anotó la clienta; si quiere los mails viejos, bajarlos de Hostinger antes de que venza esa cuenta.
 
-## Pasos cuando DonWeb habilite la zona
+## Pasos (1 y 2 ya hechos)
 
 1. **DonWeb**: copiar los nameservers que muestra el panel (no usar unos de memoria).
 2. **nic.ar** (Trámites a Distancia, con la clave fiscal de la clienta): Mis dominios → **DELEGAR** (no "Transferir").
